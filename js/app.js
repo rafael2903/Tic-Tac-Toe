@@ -6,6 +6,10 @@
     var items = document.querySelectorAll(".grid-item");
     items.forEach(item => item.addEventListener("click", print));
 
+    const matriz = [[items[0],items[1],items[2]],
+                      [items[3],items[4],items[5]],
+                      [items[6],items[7],items[8]]];
+
     var restartButton = document.querySelector("#restart-button");
     restartButton.addEventListener("click", restart);
 
@@ -22,31 +26,31 @@
             count = (count + 1) % 2;
 
             var result = check();
-            
-            if(result[0]){
-                
-                result[0] = result[0].split("-")[1];
-                
-                winnerContainer.style.display = 'block';
-                winnerContainer.firstElementChild.innerHTML = "Jogador " + result[0] + " ganhou!";
-                
-                var winnerElement = document.querySelector("#"+result[0]);
-                winnerPoints = parseInt(winnerElement.innerHTML.split(" ")[2]) + 1;
-                winnerElement.innerHTML = result[0] +" : " + winnerPoints;
+            printResult(result);
 
-            }else if(result[1]) {
+            if(!result[0] && !result[1]){
 
-                winnerContainer.style.display = 'block';
-                winnerContainer.firstElementChild.innerHTML = "Deu velha!";
+                setTimeout(() => {
+                    var randomXPosition = Math.floor(Math.random() * 3);
+                    var randomYPosition = Math.floor(Math.random() * 3);
+    
+                    while(matriz[randomXPosition][randomYPosition].classList[1] ){
+                        randomXPosition = Math.floor(Math.random() * 3);
+                        randomYPosition = Math.floor(Math.random() * 3);
+                    }
+    
+                    matriz[randomXPosition][randomYPosition].classList.add(type[count]);
+                    count = (count + 1) % 2;
+    
+                    result = check();
+                    printResult(result);
+                }, 300);
             }
         }
     }
 
+
     function check() {
-        
-        const matriz = [[items[0],items[1],items[2]],
-                      [items[3],items[4],items[5]],
-                      [items[6],items[7],items[8]]];
 
         var winner, empate = true;  
 
@@ -82,8 +86,28 @@
         return [winner, empate];
     }
 
+    function printResult(result) {
+
+        if(result[0]){
+                
+            result[0] = result[0].split("-")[1];
+            
+            winnerContainer.style.display = 'block';
+            winnerContainer.firstElementChild.innerHTML = "Jogador " + result[0] + " ganhou!";
+            
+            var winnerElement = document.querySelector("#"+result[0]);
+            winnerPoints = parseInt(winnerElement.innerHTML.split(" ")[2]) + 1;
+            winnerElement.innerHTML = result[0] +" : " + winnerPoints;
+
+        }else if(result[1]) {
+
+            winnerContainer.style.display = 'block';
+            winnerContainer.firstElementChild.innerHTML = "Deu velha!";
+        }
+    }
+
     function restart() {
-        
+
         items.forEach(item => item.classList.remove(item.classList[1]));
         winnerContainer.style.display = 'none';
         count = 0;
