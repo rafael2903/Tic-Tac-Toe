@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da velha</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="game-container">
+        <div class="title-container">
+            <h1>Jogo da velha</h2>
+        </div>
+        
+        <div class="game-screen">
+
+            <div class="main-game">
+                <div class="game-grid">
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                </div>
+                <div class="winner-container" style="display: none;">
+                    <p id="winner"></p>
+                </div>
+            </div>
+    
+            <div class="players-container">
+                <div class="player">
+                    <p class="points" id="X-points">X : 0</p>
+                </div>
+                <div class="player">
+                    <p class="points" id="O-points" >O : 0</p>
+                </div>
+            </div>
+
+            <div class="buttons-container">
+                <p class="button" id="restart-button" >Jogar
+                novamente</p>
+                <p class="button" id="reset-button" >Zerar</p>
+            </div>
+            
+        </div>
+    </div>
+    
+    <footer>
+        <p>Desenvolvido por <a href="https://github.com/rafaelrodrigues2903">Rafael Rodrigues</a></p>
+    </footer>
+
+</body>
+
+<script src="js/app.js"></script>
+
+</html>

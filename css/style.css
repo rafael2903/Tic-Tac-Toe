@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    color: white;
+}
+
+.game-container {
+    background-color: #333333;
+    height: calc(100vh - 50px);
+}
+
+.title-container {
+    height: 25%;
+    text-align: center;
+}
+
+.title-container h1 {
+    display: block;
+    padding-top: 12.5vh;
+}
+
+.game-screen {
+    height: 75%;
+}
+
+.main-game {
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
+.winner-container {
+    height: calc((calc(100vh - 50px) * 0.45) - 20px);;
+    width: calc((calc(100vh - 50px) * 0.45) - 20px);
+    background-color: rgba(0,0,0,.7);
+    position: absolute;
+}
+
+#winner {
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 22px;
+    white-space: nowrap; 
+}
+
+.game-grid {
+    display: grid;
+    height: 100%;
+    width: calc(calc(100vh - 50px) * 0.45);
+    padding: 10px;
+    box-sizing: border-box;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /* outline: #6d6d6d solid 2px;
+    outline-offset: -10px; */
+}
+
+.grid-item {
+    background-color: #6d6d6d;
+    border: #333333 solid 2px;
+    cursor: pointer;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.grid-item:hover {
+    background-color: #858585;
+}
+
+.show-X {
+    background-image: url("../images/cross.svg");
+    animation: grow 0.1s;
+}
+
+.show-O {
+    background-image: url("../images/circle.svg");
+    animation: grow 0.1s;
+}
+
+@keyframes grow {
+
+    from {
+        background-size: 100%;
+    }
+
+    to {
+        background-size: 85%;
+    }
+}
+
+.players-container {
+    height: 15%;
+    width: calc((calc(100vh - 50px) * 0.45) - 20px);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.player {
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 50%;
+    text-align: center;
+}
+
+#X-points {
+    color: rgb(216, 51, 51);
+}
+
+#O-points {
+    color: rgb(77, 131, 248);
+}
+
+.buttons-container {
+    height: 25%;
+    width: calc((calc(100vh - 50px) * 0.45) - 20px);
+    margin: 0 auto;
+    display: flex;
+}
+
+.button {
+    font-size: 1.3rem;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button:hover {
+    text-shadow: 0px 0px 3px white;
+}
+
+#restart-button {
+    white-space: pre-line;
+}
+
+footer {
+    background-color: #1e1e1e;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+footer p {
+    color: rgb(168, 168, 168);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+footer a {
+    color: rgb(168, 168, 168);
+}
+
