@@ -17,17 +17,45 @@ body {
 }
 
 .title-container {
-    height: 25%;
+    height: 20%;
     text-align: center;
 }
 
 .title-container h1 {
     display: block;
-    padding-top: 12.5vh;
+    padding-top: calc(10vh - 16px);
 }
 
 .game-screen {
-    height: 75%;
+    height: 80%;
+}
+
+.options-container {
+    height: 10%;
+    width: calc((calc(100vh - 50px) * 0.48) - 20px);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.option {
+    font-size: 1.3rem;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.option:hover {
+    text-shadow: 0px 0px 2px white;
+    transform: scale(0.9);
+    transform-origin: top;
+}
+
+.option-selected {
+    border: #1e1e1e solid 3px;
+    background-color: #6d6d6d;
+    padding: 2px;
 }
 
 .main-game {
@@ -39,8 +67,8 @@ body {
 }
 
 .winner-container {
-    height: calc((calc(100vh - 50px) * 0.45) - 24px);;
-    width: calc((calc(100vh - 50px) * 0.45) - 24px);
+    height: calc((calc(100vh - 50px) * 0.48) - 24px);;
+    width: calc((calc(100vh - 50px) * 0.48) - 24px);
     background-color: rgba(0,0,0,.7);
     position: absolute;
 }
@@ -71,7 +99,7 @@ body {
 .game-grid {
     display: grid;
     height: 100%;
-    width: calc(calc(100vh - 50px) * 0.45);
+    width: calc(calc(100vh - 50px) * 0.48);
     padding: 10px;
     box-sizing: border-box;
     grid-template-columns: repeat(3, 1fr);
@@ -115,8 +143,8 @@ body {
 }
 
 .players-container {
-    height: 15%;
-    width: calc((calc(100vh - 50px) * 0.45) - 20px);
+    height: 10%;
+    width: calc((calc(100vh - 50px) * 0.48) - 20px);
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -138,8 +166,8 @@ body {
 }
 
 .buttons-container {
-    height: 25%;
-    width: calc((calc(100vh - 50px) * 0.45) - 20px);
+    height: 20%;
+    width: calc((calc(100vh - 50px) * 0.48) - 20px);
     margin: 0 auto;
     display: flex;
 }
@@ -156,10 +184,6 @@ body {
     text-shadow: 0px 0px 2px white;
     transform: scale(0.9);
     transform-origin: top;
-}
-
-#restart-button {
-    
 }
 
 footer {
