@@ -51,8 +51,20 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    font-size: 22px;
     white-space: nowrap; 
+    font-size: 22px;
+    animation: bigger 0.1s;
+}
+
+@keyframes bigger {
+
+    from {
+        font-size: 12px;
+    }
+
+    to {
+        font-size: 22px;
+    }
 }
 
 .game-grid {
@@ -116,11 +128,11 @@ body {
     text-align: center;
 }
 
-#X-points {
+#X {
     color: rgb(216, 51, 51);
 }
 
-#O-points {
+#O {
     color: rgb(77, 131, 248);
 }
 
@@ -139,7 +151,9 @@ body {
 }
 
 .button:hover {
-    text-shadow: 0px 0px 3px white;
+    text-shadow: 0px 0px 2px white;
+    transform: scale(0.9);
+    transform-origin: top;
 }
 
 #restart-button {
