@@ -39,8 +39,8 @@ body {
 }
 
 .winner-container {
-    height: calc((calc(100vh - 50px) * 0.45) - 20px);;
-    width: calc((calc(100vh - 50px) * 0.45) - 20px);
+    height: calc((calc(100vh - 50px) * 0.45) - 24px);;
+    width: calc((calc(100vh - 50px) * 0.45) - 24px);
     background-color: rgba(0,0,0,.7);
     position: absolute;
 }
@@ -53,6 +53,7 @@ body {
     transform: translate(-50%,-50%);
     white-space: nowrap; 
     font-size: 22px;
+    font-weight: bold;
     animation: bigger 0.1s;
 }
 
