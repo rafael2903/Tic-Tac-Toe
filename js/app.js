@@ -2,6 +2,7 @@
 
     const type = ["show-X","show-O"];
     var count = 0;
+    var multiEnabled = 0;
 
     var items = document.querySelectorAll(".grid-item");
     items.forEach(item => item.addEventListener("click", print));
@@ -18,6 +19,26 @@
 
     var winnerContainer = document.querySelector(".winner-container");
 
+    var options = document.querySelector(".options-container");
+    options.addEventListener("click", assign);
+
+
+    function assign(e) {
+
+        multiEnabled = e.target.id == "multi" ? true : false;
+
+        if(multiEnabled) {
+            options.lastElementChild.classList.add("option-selected");
+            options.firstElementChild.classList.remove("option-selected");
+            restart();
+        } else {
+            options.firstElementChild.classList.add("option-selected");
+            options.lastElementChild.classList.remove("option-selected");
+            restart();
+        }
+        
+    }
+
     function print(e) {
 
         if(e.target.classList.length == 1) {
@@ -28,7 +49,7 @@
             var result = check();
             printResult(result);
 
-            if(!result[0] && !result[1]){
+            if(!result[0] && !result[1] && !multiEnabled){
 
                 setTimeout(() => {
                     var randomXPosition = Math.floor(Math.random() * 3);
@@ -44,7 +65,7 @@
     
                     result = check();
                     printResult(result);
-                }, 300);
+                }, 400);
             }
         }
     }
