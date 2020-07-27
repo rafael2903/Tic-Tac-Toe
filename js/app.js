@@ -41,7 +41,7 @@
 
     function print(e) {
 
-        if(e.target.classList.length == 1 && count == 0) {
+        if(e.target.classList.length == 1 && (multiEnabled || count == 0) ) {
 
             e.target.classList.add(type[count]);
             count = (count + 1) % 2;
