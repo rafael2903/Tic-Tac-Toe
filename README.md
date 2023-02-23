@@ -1,5 +1,5 @@
-## Hash game
+## Tic Tac Toe Game
 
-Hash game developed with HTML, CSS and vanilla JS.
+Tic Tac Toe game developed with HTML, CSS and vanilla JS.
 
-[Clik here](https://rafael2903.github.io/hash-game/) to acess the game.
+[Clik here](https://rafael2903.github.io/Tic-Tac-Toe/) to access the game.
